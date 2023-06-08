@@ -31,6 +31,31 @@
   color: #fff;
 }
 
+.menu li {
+  display: inline-block;
+  margin-right: 8px;
+  cursor: pointer;
+  position: relative;
+}
+
+.menu li:after {
+  content: "";
+  display: none;
+  width: 9px;
+
+  border: 2.50195px solid #e3e4e6;
+
+  background-color: #e3e4e6;
+  position: absolute;
+  top: 29px;
+  left: 17px;
+  border-radius: 4px;
+}
+
+.menu li.active:after {
+  display: block;
+}
+
 .navbar {
   display: flex;
   align-items: center;
@@ -74,16 +99,45 @@
   position: absolute;
   bottom: 0;
   left: 50%;
-  transform: translateX(-80%);
+}
+
+.arrow img {
+  animation: jump 1s infinite;
+}
+
+.arrow:hover img {
+  animation-play-state: paused;
+}
+
+@keyframes jump {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+  100% {
+    transform: translateY(0);
+  }
 }
 
 /* ----- client section ----- */
 .client-section {
   margin: 10rem 11.2rem 0 11.2rem;
+  width: 121.6rem;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 8rem;
+}
+
+.client-texts {
+  word-wrap: break-all;
 }
 
 .client-texts h1 {
-  line-height: 150%;
+  line-height: 6rem;
   font-size: 4rem;
   font-weight: 300;
   color: rgba(227, 228, 230, 0.55);
@@ -94,12 +148,15 @@
 }
 
 .client-logo {
+  /* width: 110rem; */
+  height: 9.2rem;
   margin-top: 8rem;
   display: flex;
   justify-content: space-between;
-  overflow: hidden;
-  white-space: nowrap;
-  transition: transform 0.5s ease-in-out;
+  align-items: center;
+  flex-direction: row;
+  gap: 6.4rem;
+  padding: 1.6rem 0;
 }
 
 /* ----- works section  -----*/
@@ -120,7 +177,7 @@
 
 .work-header {
   width: 122rem;
-
+  height: 6rem;
   margin-bottom: 9.7rem;
 }
 
@@ -155,6 +212,19 @@
 .work-desc h3 {
   font-size: 3.2rem;
   line-height: 150%;
+}
+
+.work-desc--content {
+  width: 59.4rem;
+  height: 14.4rem;
+}
+
+.work-desc--content h3 {
+  font-weight: 300;
+}
+
+.work-desc--content strong {
+  font-weight: 600;
 }
 
 .work-desc--cat {
@@ -212,11 +282,15 @@
 }
 
 .about-section {
-  margin-top: 22.7rem;
+  max-width: 122.6rem;
+  height: 84.8rem;
+  margin-top: 7.4rem;
+  margin-left: 10.7rem;
 
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: row;
 
   gap: 3.4rem;
 }

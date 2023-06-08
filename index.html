@@ -25,9 +25,9 @@
         </div>
         <div class="menu">
           <ul>
-            <li><a href="#home">HOME</a></li>
-            <li><a href="#work">WORK</a></li>
-            <li><a href="#about">ABOUT</a></li>
+            <li onclick="activateMenuItem(this)"><a href="#home">HOME</a></li>
+            <li onclick="activateMenuItem(this)"><a href="#work">WORK</a></li>
+            <li onclick="activateMenuItem(this)"><a href="#about">ABOUT</a></li>
           </ul>
         </div>
       </div>
@@ -36,20 +36,29 @@
       <!-- start of hero-section -->
       <div class="hero-section" id="home">
         <div class="hero-texts">
-          <h1>I'm designer specialising in <strong>UI/UX</strong> and</h1>
-          <h1><strong>Interaction Design</strong></h1>
+          <h1>
+            I'm designer specialising in
+            <strong>UI/UX and Interaction Design</strong>
+          </h1>
         </div>
         <div class="arrow">
-          <img src="img/Arrow-down.png" alt="arrow pointing down" />
+          <a href="#client-section"
+            ><img src="img/Arrow-down.png" alt="arrow pointing down"
+          /></a>
         </div>
       </div>
       <!-- end of hero-section -->
     </main>
     <!-- start of client section -->
-    <div class="client-section">
+    <div class="client-section" id="client-section">
       <div class="client-texts">
-        <h1>Some of <strong>the clients I have</strong></h1>
-        <h1><strong>designed for</strong></h1>
+        <h1 class="fw-300">
+          Some of
+          <strong class="tbold"
+            >the clients I have <br />
+            designed for</strong
+          >
+        </h1>
       </div>
       <div class="client-logo">
         <!-- <div class="logo-slide"> -->
@@ -82,7 +91,7 @@
 
     <div class="work-section" id="work">
       <div class="work-header">
-        <h1>Selected <strong>Works</strong></h1>
+        <h1 class="fw-300">Selected <strong class="tbold">Works</strong></h1>
       </div>
       <!-- work 1 start -->
       <div class="work-list">
@@ -94,9 +103,13 @@
             <h5>REAL ESTATE TEMPLATE</h5>
           </div>
           <div class="work-desc--content">
-            <h3>Lorem ipsum dolor sit amet,</h3>
-            <h3>consectetur <strong>adipiscing elit. Ultrices</strong></h3>
-            <h3><strong>lorem non feugiat egestas amet.</strong></h3>
+            <h3 class="fw-300">
+              Lorem ipsum dolor sit amet, consectetur
+              <strong class="tbold"
+                >adipiscing elit. Ultrices lorem non feugiat egestas
+                amet.</strong
+              >
+            </h3>
           </div>
           <div class="work-desc--cat">
             <p>Website Design</p>
@@ -114,12 +127,16 @@
       <div class="work-list m-9">
         <div class="work-desc">
           <div class="work-desc--header">
-            <h5>PLAT IDENTIFICATION APP</h5>
+            <h5>PLANT IDENTIFICATION APP</h5>
           </div>
           <div class="work-desc--content">
-            <h3>Lorem ipsum dolor sit amet,</h3>
-            <h3>consectetur <strong>adipiscing elit. Ultrices</strong></h3>
-            <h3><strong>lorem non feugiat egestas amet.</strong></h3>
+            <h3 class="fw-300">
+              Lorem ipsum dolor sit amet, consectetur
+              <strong class="tbold"
+                >adipiscing elit. Ultrices lorem non feugiat egestas
+                amet.</strong
+              >
+            </h3>
           </div>
           <div class="work-desc--cat">
             <p>Mobile App</p>
@@ -146,9 +163,13 @@
             <h5>SMART HOME APP</h5>
           </div>
           <div class="work-desc--content">
-            <h3>Lorem ipsum dolor sit amet,</h3>
-            <h3>consectetur <strong>adipiscing elit. Ultrices</strong></h3>
-            <h3><strong>lorem non feugiat egestas amet.</strong></h3>
+            <h3 class="fw-300">
+              Lorem ipsum dolor sit amet, consectetur
+              <strong class="tbold"
+                >adipiscing elit. Ultrices lorem non feugiat egestas
+                amet.</strong
+              >
+            </h3>
           </div>
           <div class="work-desc--cat">
             <p>Mobile App</p>
@@ -169,9 +190,13 @@
             <h5>LOGO ANIMATION</h5>
           </div>
           <div class="work-desc--content">
-            <h3>Lorem ipsum dolor sit amet,</h3>
-            <h3>consectetur <strong>adipiscing elit. Ultrices</strong></h3>
-            <h3><strong>lorem non feugiat egestas amet.</strong></h3>
+            <h3 class="fw-300">
+              Lorem ipsum dolor sit amet, consectetur
+              <strong class="tbold"
+                >adipiscing elit. Ultrices lorem non feugiat egestas
+                amet.</strong
+              >
+            </h3>
           </div>
           <div class="work-desc--cat">
             <p>Animation</p>
@@ -198,11 +223,13 @@
           <h4>A BIT ABOUT ME</h4>
         </div>
         <div class="about-text--content">
-          <h3>I am a UI/UX designer who is</h3>
-          <h3>passionate about creating <strong>beautiful</strong></h3>
-          <h3><strong>and joyful digital experiences.</strong></h3>
-          <h3><strong>Besides design, I love music, games </strong></h3>
-          <h3><strong>and travelling.</strong></h3>
+          <h3>
+            I am a UI/UX designer who is passionate about creating
+            <strong
+              >beautiful and joyful digital experiences. Besides design, I love
+              music, games and travelling.</strong
+            >
+          </h3>
         </div>
       </div>
       <div class="about-img">
@@ -256,6 +283,16 @@
       type="text/javascript"
       charset="utf-8"
     ></script>
+
+    <script>
+      function activateMenuItem(element) {
+        var menuItems = document.querySelectorAll(".menu li");
+        menuItems.forEach(function (item) {
+          item.classList.remove("active");
+        });
+        element.classList.add("active");
+      }
+    </script>
 
     <script>
       $(".client-logo").slick({
